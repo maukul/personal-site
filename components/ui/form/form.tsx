@@ -10,8 +10,8 @@ import {
   FormProvider,
 } from 'react-hook-form'
 
-import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
+import { Label } from '../label'
 import { FormFieldContext, FormItemContext } from './context'
 import { useFormField } from './hooks'
 

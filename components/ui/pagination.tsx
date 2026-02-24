@@ -1,4 +1,4 @@
-import type { Button } from '@/components/ui/button/button'
+import type { Button } from './button'
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
