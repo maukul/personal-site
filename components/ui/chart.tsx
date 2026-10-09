@@ -8,6 +8,8 @@ import { cn } from '@/lib/utils'
 
 const THEMES = { light: '', dark: '.dark' } as const
 
+const COLON = /:/g
+
 export type ChartConfig = {
   [k in string]: {
     label?: React.ReactNode
@@ -47,7 +49,7 @@ function ChartContainer({
   >['children']
 }) {
   const uniqueId = React.useId()
-  const chartId = `chart-${id != null && id !== '' ? id : uniqueId.replace(/:/g, '')}`
+  const chartId = `chart-${id != null && id !== '' ? id : uniqueId.replace(COLON, '')}`
 
   return (
     <ChartContext value={{ config }}>
@@ -195,7 +197,7 @@ function ChartTooltipContent({
               >
                 {formatter != null && item?.value !== undefined && item.name != null
                   ? (
-                      formatter(item.value, item.name, item, index, item.payload as Payload<ValueType, NameType>)
+                      formatter(item.value, item.name, item, index, item.payload as Payload<ValueType, NameType>[])
                     )
                   : (
                       <>
@@ -335,7 +337,7 @@ function getPayloadConfigFromPayload(
     key in payload
     && typeof payload[key as keyof typeof payload] === 'string'
   ) {
-    configLabelKey = payload[key as keyof typeof payload] as string
+    configLabelKey = payload[key as keyof typeof payload]
   }
   else if (
     payloadPayload != null
@@ -344,7 +346,7 @@ function getPayloadConfigFromPayload(
   ) {
     configLabelKey = payloadPayload[
       key as keyof typeof payloadPayload
-    ] as string
+    ]
   }
 
   return configLabelKey in config
