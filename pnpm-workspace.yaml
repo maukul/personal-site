@@ -1,11 +1,14 @@
 shellEmulator: true
 
-useNodeVersion: 24.13.1
+# pnpm 11: allowBuilds replaces onlyBuiltDependencies/ignoredBuiltDependencies.
+# false = package is installed but its install scripts never run.
+allowBuilds:
+  msw: false
 
+  sharp: false
+  unrs-resolver: false
+# Fail the install when a dependency has weaker trust evidence than an
+# earlier release (possible supply-chain takeover).
 trustPolicy: no-downgrade
 trustPolicyExclude:
   - semver@6.3.1
-
-ignoredBuiltDependencies:
-  - sharp
-  - unrs-resolver
