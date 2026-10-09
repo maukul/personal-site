@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# personal-site
 
-## Getting Started
+One-page developer portfolio of Mykhailo Yastremsky — built with Next.js, Tailwind CSS and shadcn/ui.
 
-First, run the development server:
+All site content — name, bio, skills, projects, links — lives in [`content.ts`](./content.ts). Edit that file and the page updates; no component changes needed.
+
+## Getting started
+
+Requires Node 24 and pnpm 11 (`corepack enable`).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command           | What it does                    |
+| ----------------- | ------------------------------- |
+| `pnpm dev`        | Dev server                      |
+| `pnpm build`      | Production build                |
+| `pnpm start`      | Serve the production build      |
+| `pnpm lint`       | ESLint, including code style    |
+| `pnpm typecheck`  | TypeScript check                |
 
-## Learn More
+## Structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+app/                  Next.js App Router: layout, page, global styles
+components/sections/  Header, hero, bento tiles, case studies, pitch, footer
+components/           Client islands: view mode, theme, copy-email
+components/ui/        shadcn/ui primitives
+content.ts            All site content — the single source of truth
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Two page views share one layout: the **Deep dive** (bento grid + case
+studies) and the recruiter's **1-min pitch**, toggled in the header.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](./LICENSE)
