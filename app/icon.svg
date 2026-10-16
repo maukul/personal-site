@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Dark zinc tile matching the site background -->
+  <rect width="64" height="64" rx="14" fill="#09090b"/>
+  <!-- M monogram in the primary orange (#f97316) -->
+  <path d="M17 44 V18 L32 36 L47 18 V44" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Emerald status dot matching the "open to work" pill -->
+  <circle cx="50" cy="50" r="7" fill="#10b981" stroke="#09090b" stroke-width="3.5"/>
+</svg>
