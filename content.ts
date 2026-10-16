@@ -20,9 +20,14 @@ export interface ExperienceEntry {
   company?: string
   /** Live product or company site, linked from the case study. */
   url?: string
-  /** Year or date range; omitted when unknown. */
+  /** Date range, e.g. '2025 – present'. */
   period?: string
+  /** Employment type, e.g. 'Contract' or 'Full-time'. */
+  type?: string
+  /** One-line summary shown in cards and as the intro paragraph. */
   description: string
+  /** Key contributions, rendered as a list inside the case study. */
+  bullets?: string[]
   /** Stack chips rendered on the case study card. */
   stack: string[]
   /** Featured entries appear in the bento "Projects" tile. */
@@ -93,9 +98,9 @@ export const site: SiteContent = {
   role: 'Senior Full-Stack Engineer',
   statusPill: 'Open to senior full-stack contract and part-time engagements (remote)',
 
-  headline: 'Mykhailo Yastremsky Full-Stack Engineer',
+  headline: 'Mykhailo Yastremsky — Senior Full-Stack Engineer',
   subheadline:
-    'React 19, Next.js 16 and. TypeScript on the frontend; Laravel/PHP, Supabase/PostgreSQL on the backend — from pnpm monorepos to legacy migrations.',
+    'React, Next.js and TypeScript on the frontend; Laravel/PHP, Supabase/PostgreSQL on the backend — from pnpm monorepos to legacy migrations.',
 
   tagline:
     'Senior Full-Stack Engineer building web platforms for EdTech, MedTech, ERP and CRM products. Open to contract and part-time engagements, remote.',
@@ -104,7 +109,7 @@ export const site: SiteContent = {
     label: 'Book a 15-min intro',
     href: 'mailto:maukul06@gmail.com?subject=15-min%20intro%20call',
   },
-  caseStudies: { label: 'View case studies', href: '#work' },
+  caseStudies: { label: 'View experience', href: '#work' },
 
   // Only confirmed facts — no invented metrics.
   stats: [
@@ -114,7 +119,7 @@ export const site: SiteContent = {
 
   roleSummary: 'Senior Full-Stack Engineer (React/Next.js + Laravel/PHP, Supabase/PostgreSQL)',
   availability: 'Open to senior full-stack contract and part-time engagements (remote)',
-  languages: 'Ukrainian — native · English — A2',
+  languages: 'Ukrainian — native',
   domains: 'EdTech, MedTech, ERP, CRM, e-commerce, AI integrations',
 
   links: {
@@ -126,7 +131,7 @@ export const site: SiteContent = {
   },
 
   skills: [
-    { title: 'Core', skills: ['React 19', 'Next.js 16 (App Router)', 'TypeScript', 'Tailwind CSS v4'] },
+    { title: 'Core', skills: ['React', 'Next.js (App Router)', 'TypeScript', 'Tailwind CSS'] },
     { title: 'Backend', skills: ['Laravel', 'PHP', 'PostgreSQL', 'MySQL', 'Supabase'] },
     { title: 'Data & tooling', skills: ['TanStack Query', 'Zod', 'Storybook', 'ESLint'] },
     { title: 'AI', skills: ['OpenAI API', 'Anthropic API', 'Gemini API'] },
@@ -143,7 +148,7 @@ export const site: SiteContent = {
     },
     {
       title: 'AI integrations',
-      text: 'Wires OpenAI, Anthropic and Gemini APIs into product features.',
+      text: 'Ships concrete LLM features — a streaming study assistant, AI-generated practice and feedback — through one provider-agnostic layer over the OpenAI, Anthropic and Gemini APIs.',
     },
   ],
 
@@ -165,23 +170,38 @@ export const site: SiteContent = {
 
   experience: [
     {
-      role: 'Lead Developer',
-      company: 'EdTech AI Ecosystem',
-      period: '2025',
+      role: 'Lead Engineer',
+      company: 'AlgoAid',
+      period: 'Aug 2025 – present',
+      type: 'Contract',
       // TODO: demo/screenshot url.
       description:
-        'Built a learning platform as a pnpm monorepo: Next.js 16 (Turbopack), React 19, a type-safe Supabase data layer and Tailwind CSS v4.',
-      stack: ['Next.js 16', 'React 19', 'TypeScript', 'Supabase', 'Tailwind CSS v4', 'pnpm monorepo'],
+        'Leading the engineering and architecture of a non-profit EdTech platform for technical interview preparation — an AI-powered learning environment.',
+      bullets: [
+        'Architected and built the full-stack infrastructure of the learning platform (Next.js, React, Tailwind CSS) as a pnpm monorepo with a shared UI layer.',
+        'Integrated multi-model AI (OpenAI, Anthropic, Google Gemini) via the Vercel AI SDK to deliver real-time coding guidance.',
+        'Built an interactive coding environment powered by Monaco Editor for in-browser problem solving.',
+        'Implemented a spaced-repetition flashcard system driven by the FSRS algorithm for optimal retention.',
+        'Engineered monetization and subscription workflows via Stripe integration using Deno Edge Functions.',
+        'Own the backend and database architecture: Supabase, Drizzle ORM, Row Level Security (RLS) and pgTAP testing.',
+        'Ensure continuous code quality and UI reliability with Storybook, Vitest unit testing and Playwright end-to-end suites.',
+      ],
+      stack: ['Next.js', 'React', 'TypeScript', 'Vercel AI SDK', 'Monaco Editor', 'Supabase', 'Drizzle ORM', 'Stripe', 'Tailwind CSS', 'Storybook', 'Playwright', 'Vitest'],
       featured: true,
     },
     {
       role: 'Lead Developer',
       company: 'Eclipse Insights',
       period: '2025',
-      // TODO: confirm the exact period — both Lead roles are listed as 2025.
+      // TODO: confirm the exact period and employment type.
       // TODO: demo/screenshot url.
       description:
-        'Led a medical ERP on React, TypeScript, Tailwind and Express; Huron Consulting Group acquired the platform after launch.',
+        'Led a medical ERP from blank slate to launch; Huron Consulting Group acquired the platform after launch.',
+      bullets: [
+        'Owned the React + Express architecture end-to-end: split the product into domain modules and built the API layer and design system the team shipped on.',
+        'Ran planning and code review, mentored engineers and set the delivery process.',
+        'Worked directly with the client on requirements and priorities.',
+      ],
       stack: ['React', 'TypeScript', 'Tailwind', 'Express'],
       featured: true,
     },
@@ -191,59 +211,47 @@ export const site: SiteContent = {
       url: 'https://app.getspruce.com',
       period: '2024',
       description:
-        'Built an order scheduling and workforce management platform on a micro-frontend architecture (React, TypeScript, Material UI): employees are assigned to orders and track their schedules.',
+        'Built an order scheduling and workforce management platform on a micro-frontend architecture: employees are assigned to orders and track their schedules.',
       stack: ['React', 'TypeScript', 'Material UI', 'micro-frontends'],
     },
     {
-      role: 'Frontend Engineer',
-      company: 'Nordicglobal',
-      url: 'https://nordicglobal.com',
-      period: '2023',
+      role: 'Senior Full-Stack Engineer',
+      company: 'SoftBee',
+      period: 'Nov 2022 – Aug 2025',
+      type: 'Full-time',
       description:
-        'Took over a legacy customer-management system after the original team left; migrated it to a modern stack, refreshed the UI and stabilised the product with zero downtime.',
-      stack: ['React', 'TypeScript', 'legacy migration'],
-      featured: true,
+        'Senior full-stack work on two products for a US client — healthcare and agri-commerce.',
+      bullets: [
+        'MSHFA — multimodal doctor–patient platform: online appointment scheduling and payments, dedicated portals for doctors (medical records, appointments) and pharmacies (order management), plus an administrative panel.',
+        'Heatleys Fast Quote — quoting system for a major agricultural and veterinary distributor: ERP integration, complex tabular data manipulation, real-time search and end-to-end test coverage.',
+      ],
+      stack: ['React', 'Next.js', 'TypeScript', 'Supabase', 'TanStack Query', 'Zod', 'GraphQL', 'Material UI', 'AG Grid', 'Playwright'],
     },
     {
-      role: 'Full-Stack Developer',
-      company: 'MSHFA',
-      period: '2022',
-      // TODO: demo/screenshot url.
+      role: 'Lead Engineer',
+      company: 'LuxWash',
+      period: 'Oct 2021 – Nov 2022',
+      type: 'Full-time',
       description:
-        'Built a doctor–patient platform (React, Material UI, GraphQL): patients book and pay for appointments online; doctors manage medical records; pharmacies manage patient orders; an admin panel governs all entities.',
-      stack: ['React', 'Material UI', 'GraphQL', 'JavaScript', 'Sass', 'Responsive Design', 'Figma'],
-    },
-    {
-      role: 'Full-Stack Developer',
-      company: 'Hozland',
-      period: '2021',
-      // TODO: demo/screenshot url.
-      description: 'Built a B2B online store for wholesale ordering (Laravel, Vue.js).',
-      stack: ['Nuxt.js', 'Vue.js', 'Laravel', 'PHP', 'PostgreSQL', 'REST API'],
-    },
-    {
-      role: 'Full-Stack Developer',
-      company: 'Multi-express',
-      period: '2020',
-      // TODO: demo/screenshot url.
-      description:
-        'Built a CRM for an international parcel-delivery company (Laravel, Vue.js, PostgreSQL): AWB bills of lading, UPS integration and a shipping-cost calculator.',
+        'Full-cycle development — server logic, API, UI — for a European car-wash equipment and auto care products company, across three product lines: the corporate website, an internal CRM automating business processes, and the e-commerce store.',
       stack: ['Laravel', 'PHP', 'Vue.js', 'PostgreSQL', 'REST API'],
     },
     {
       role: 'Full-Stack Developer',
-      company: 'ForkLift',
-      period: '2019',
-      // TODO: demo/screenshot url.
+      company: 'Raxkor',
+      period: 'Sep 2017 – Jan 2021',
+      type: 'Full-time',
       description:
-        'Built a bulletin board for a forklift company (Laravel, Vue.js): customers find loaders to buy or rent, and owners post offers.',
-      stack: ['Laravel', 'PHP', 'Vue.js', 'MySQL', 'REST API'],
-    },
-    {
-      role: 'Backend Developer',
-      period: '2017–2020',
-      description: 'Started my career building PHP and Laravel backends.',
-      stack: ['PHP', 'Laravel'],
+        'Development of scalable server architecture and specialized web applications across logistics, e-commerce, hospitality and corporate business processes (Laravel/PHP, Vue.js).',
+      bullets: [
+        'Logistics & fleet management (Multi-Express): core backend services for real-time courier tracking, automated Air Waybill (AWB) generation, UPS integration and live shipment-status processing.',
+        'E-commerce solutions: checkout workflows, order processing, admin panels and secure payment gateways — including a B2B wholesale store (Hozland) and a forklift marketplace (ForkLift).',
+        'CRM & ERP systems (AKGroup, Slobozhanska): business-logic modules, data-processing pipelines and role-based access control (RBAC).',
+        'Booking & hospitality platforms (Gloobose Bogart): direct booking engines and availability management for hotels and restaurants.',
+        'Queue management system (QMS): backend architecture for real-time queues across self-service kiosks and digital information displays.',
+        'Automotive data verification (DEAL): automated vehicle-history verification via VIN codes.',
+      ],
+      stack: ['Laravel', 'PHP', 'Vue.js', 'PostgreSQL', 'MySQL', 'REST API'],
     },
   ],
 }

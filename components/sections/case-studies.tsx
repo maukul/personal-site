@@ -11,7 +11,7 @@ import { Section } from './section'
 /** Expandable work history — the deep dive behind the bento trio. */
 export function CaseStudies() {
   return (
-    <Section id="work" title="Case studies">
+    <Section id="work" title="Experience">
       <Accordion
         type="single"
         collapsible
@@ -44,6 +44,12 @@ export function CaseStudies() {
                         : entry.company}
                     </>
                   )}
+                  {entry.type != null && (
+                    <span className="font-normal text-muted-foreground">
+                      {' · '}
+                      {entry.type}
+                    </span>
+                  )}
                 </span>
                 {entry.period != null && (
                   <span className="text-xs font-normal text-muted-foreground">
@@ -56,6 +62,19 @@ export function CaseStudies() {
               <p className="max-w-xl leading-6 text-muted-foreground">
                 {entry.description}
               </p>
+              {entry.bullets != null && entry.bullets.length > 0 && (
+                <ul className="max-w-xl space-y-2">
+                  {entry.bullets.map(bullet => (
+                    <li
+                      key={bullet}
+                      className="flex gap-2.5 text-sm leading-6 text-muted-foreground"
+                    >
+                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/70" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
               {entry.stack.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {entry.stack.map(tech => (

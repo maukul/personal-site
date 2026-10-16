@@ -27,7 +27,7 @@ export function TechShowcase() {
           <h2 className="text-lg font-semibold tracking-tight">Featured work</h2>
           {selected != null && !hasMatch && (
             <span className="text-xs text-muted-foreground">
-              not in the featured trio — see case studies below
+              not in the featured trio — see experience below
             </span>
           )}
         </div>
