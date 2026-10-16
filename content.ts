@@ -95,7 +95,7 @@ export const site: SiteContent = {
 
   headline: 'Mykhailo Yastremsky Full-Stack Engineer',
   subheadline:
-    'React 19, Next.js 16 and. TypeScript on the frontend; Laravel/PHP, Express and PostgreSQL on the backend — from pnpm monorepos to legacy migrations.',
+    'React 19, Next.js 16 and. TypeScript on the frontend; Laravel/PHP, Supabase/PostgreSQL on the backend — from pnpm monorepos to legacy migrations.',
 
   tagline:
     'Senior Full-Stack Engineer building web platforms for EdTech, MedTech, ERP and CRM products. Open to contract and part-time engagements, remote.',
@@ -112,23 +112,23 @@ export const site: SiteContent = {
     { value: '2×', label: 'products led as Lead Developer (EdTech, MedTech ERP)' },
   ],
 
-  roleSummary: 'Senior Full-Stack Engineer (React/Next.js + Laravel/PHP)',
+  roleSummary: 'Senior Full-Stack Engineer (React/Next.js + Laravel/PHP, Supabase/PostgreSQL)',
   availability: 'Open to senior full-stack contract and part-time engagements (remote)',
-  languages: 'Ukrainian — native · English — [TODO: confirm English level]',
+  languages: 'Ukrainian — native · English — A2',
   domains: 'EdTech, MedTech, ERP, CRM, e-commerce, AI integrations',
 
   links: {
     github: 'https://github.com/maukul',
     email: 'maukul06@gmail.com',
     upwork: 'https://www.upwork.com/freelancers/~0119de2b8df9c5b9d8',
-    linkedin: '[TODO: LinkedIn url]',
-    cv: '[TODO: /cv.pdf]',
+    linkedin: 'https://www.linkedin.com/in/mykhailo-yastremsky-339385162',
+    cv: '/CV_Mihalo_Yastremsky_Senior_Frontend.pdf',
   },
 
   skills: [
     { title: 'Core', skills: ['React 19', 'Next.js 16 (App Router)', 'TypeScript', 'Tailwind CSS v4'] },
-    { title: 'Backend', skills: ['Laravel', 'PHP', 'Express', 'PostgreSQL', 'MySQL', 'Supabase'] },
-    { title: 'Data & tooling', skills: ['pnpm Workspaces', 'TanStack Query', 'Zod', 'Storybook', 'ESLint'] },
+    { title: 'Backend', skills: ['Laravel', 'PHP', 'PostgreSQL', 'MySQL', 'Supabase'] },
+    { title: 'Data & tooling', skills: ['TanStack Query', 'Zod', 'Storybook', 'ESLint'] },
     { title: 'AI', skills: ['OpenAI API', 'Anthropic API', 'Gemini API'] },
   ],
 
@@ -170,7 +170,7 @@ export const site: SiteContent = {
       period: '2025',
       // TODO: demo/screenshot url.
       description:
-        'Built a learning platform as a pnpm monorepo: Next.js 16 (Turbopack), React 19, a type-safe Supabase data layer and Tailwind CSS v4. [TODO: result/metric]',
+        'Built a learning platform as a pnpm monorepo: Next.js 16 (Turbopack), React 19, a type-safe Supabase data layer and Tailwind CSS v4.',
       stack: ['Next.js 16', 'React 19', 'TypeScript', 'Supabase', 'Tailwind CSS v4', 'pnpm monorepo'],
       featured: true,
     },
@@ -181,7 +181,7 @@ export const site: SiteContent = {
       // TODO: confirm the exact period — both Lead roles are listed as 2025.
       // TODO: demo/screenshot url.
       description:
-        'Led a medical ERP on React, TypeScript, Tailwind and Express; Huron Consulting Group acquired the platform after launch. [TODO: my concrete contribution / team size]',
+        'Led a medical ERP on React, TypeScript, Tailwind and Express; Huron Consulting Group acquired the platform after launch.',
       stack: ['React', 'TypeScript', 'Tailwind', 'Express'],
       featured: true,
     },
@@ -191,7 +191,7 @@ export const site: SiteContent = {
       url: 'https://app.getspruce.com',
       period: '2024',
       description:
-        'Built an order scheduling and workforce management platform on a micro-frontend architecture (React, TypeScript, Material UI): employees are assigned to orders and track their schedules. [TODO: result]',
+        'Built an order scheduling and workforce management platform on a micro-frontend architecture (React, TypeScript, Material UI): employees are assigned to orders and track their schedules.',
       stack: ['React', 'TypeScript', 'Material UI', 'micro-frontends'],
     },
     {
@@ -210,7 +210,7 @@ export const site: SiteContent = {
       period: '2022',
       // TODO: demo/screenshot url.
       description:
-        'Built a doctor–patient platform (React, Material UI, GraphQL): patients book and pay for appointments online; doctors manage medical records; pharmacies manage patient orders; an admin panel governs all entities. [TODO: result]',
+        'Built a doctor–patient platform (React, Material UI, GraphQL): patients book and pay for appointments online; doctors manage medical records; pharmacies manage patient orders; an admin panel governs all entities.',
       stack: ['React', 'Material UI', 'GraphQL', 'JavaScript', 'Sass', 'Responsive Design', 'Figma'],
     },
     {
